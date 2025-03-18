@@ -1,0 +1,6 @@
+services:
+  java-app:
+    image: szymonpawelfortuna/ebiznes_zad1
+    container_name: java-hello-world
+    environment:
+      - TZ=Europe/Warsaw

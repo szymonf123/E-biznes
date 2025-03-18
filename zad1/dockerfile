@@ -1,0 +1,19 @@
+FROM ubuntu:24.04
+
+ENV TZ=Europe/Warsaw
+
+RUN apt-get update && apt-get install -y \
+    python3.10 openjdk-8-jdk openjdk-8-jre kotlin curl zip unzip
+RUN curl -s "https://get.sdkman.io" | bash && \
+    bash -c "source $HOME/.sdkman/bin/sdkman-init.sh && sdk install gradle"
+
+ENV PATH=$PATH:/root/.sdkman/candidates/gradle/current/bin
+
+RUN mkdir -p /app
+WORKDIR /app
+COPY build.gradle /app/
+COPY src /app/src/main/java/
+
+RUN gradle build
+RUN javac src/main/java/HelloWorld.java
+CMD ["bash", "-c", "echo 'From javac:' && java -cp src/main/java HelloWorld && echo 'From gradle:' && gradle run"]
