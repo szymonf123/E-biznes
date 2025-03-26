@@ -1,7 +1,7 @@
-@(productsList: List[models.Product])
+@(title: String, productsList: List[models.Product])
 
-@main("Lista Produktów") {
-  <h1>Lista Produktów</h1>
+@main(title) {
+  <h1>@title</h1>
   <ul>
   @for(product <- productsList) {
     <li>@product.name - @product.price PLN</li>
