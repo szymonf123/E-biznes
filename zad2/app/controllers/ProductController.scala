@@ -1,20 +1,15 @@
 package controllers
 import javax.inject._
 import play.api.mvc._
-import play.api.libs.json._
 import models.Product
-
-object Product {
-  implicit val productFormat: Format[Product] = Json.format[Product]
-}
 
 @Singleton
 class ProductController @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
 
   private var products = List(
-    new Product("Laptop", 3000.00),
-    new Product("Smartphone", 1500.00),
-    new Product("Tablet", 1200.00)
+    Product("Laptop", 3000.00),
+    Product("Smartphone", 1500.00),
+    Product("Tablet", 1200.00)
   )
 
   def showAll: Action[AnyContent] = Action {
@@ -31,7 +26,7 @@ class ProductController @Inject()(val controllerComponents: ControllerComponents
   }
 
   def add(name: String, price: Double): Action[AnyContent] = Action {
-    products = products :+ new Product(name, price)
+    products = products :+ Product(name, price)
     Ok(views.html.index(s"Dodano nowy produkt - $name", products))
   }
 

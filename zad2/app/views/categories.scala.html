@@ -1,0 +1,10 @@
+@(title: String, categoriesList: List[models.Category])
+
+@main(title) {
+    <h1>@title</h1>
+    <ol start="0">
+    @for(category <- categoriesList) {
+        <li>@category.name</li>
+    }
+    </ol>
+}

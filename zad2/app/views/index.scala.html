@@ -2,9 +2,9 @@
 
 @main(title) {
   <h1>@title</h1>
-  <ul>
+  <ol start="0">
   @for(product <- productsList) {
     <li>@product.name - @product.price PLN</li>
   }
-  </ul>
+  </ol>
 }
