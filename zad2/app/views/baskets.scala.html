@@ -1,0 +1,10 @@
+@(title: String, basketsList: List[models.Basket])
+
+@main(title) {
+    <h1>@title</h1>
+    <ol start="0">
+    @for(basket <- basketsList) {
+        <li>Użytkownik o ID = @basket.userID posiada produkt o ID = @basket.productID w liczbie @basket.number sztuk</li>
+    }
+    </ol>
+}

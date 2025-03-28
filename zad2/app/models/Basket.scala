@@ -1,5 +1,3 @@
 package models
 
-class Basket {
-  private var products: List[Product] = List()
-}
+case class Basket(userID: Int, productID: Int, number: Int)

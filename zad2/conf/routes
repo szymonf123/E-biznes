@@ -3,17 +3,23 @@
 # https://www.playframework.com/documentation/latest/ScalaRouting
 # ~~~~
 
-GET     /                           controllers.ProductController.showAll()
-GET     /get/:id                    controllers.ProductController.showById(id: Int)
-GET     /post/:name/:price          controllers.ProductController.add(name: String, price: Double)
-GET     /delete/:id                 controllers.ProductController.delete(id: Int)
-GET     /put/:id/:name/:price       controllers.ProductController.update(id: Int, name: String, price: Double)
+GET     /                                                  controllers.ProductController.showAll()
+GET     /get/:id                                           controllers.ProductController.showById(id: Int)
+GET     /post/:name/:price                                 controllers.ProductController.add(name: String, price: Double)
+GET     /delete/:id                                        controllers.ProductController.delete(id: Int)
+GET     /put/:id/:name/:price                              controllers.ProductController.update(id: Int, name: String, price: Double)
 
-GET     /categories                 controllers.CategoryController.showAll()
-GET     /categories/get/:id         controllers.CategoryController.showById(id: Int)
-GET     /categories/post/:name      controllers.CategoryController.add(name: String)
-GET     /categories/delete/:id      controllers.CategoryController.delete(id: Int)
-GET     /categories/put/:id/:name   controllers.CategoryController.update(id: Int, name: String)
+GET     /categories                                        controllers.CategoryController.showAll()
+GET     /categories/get/:id                                controllers.CategoryController.showById(id: Int)
+GET     /categories/post/:name                             controllers.CategoryController.add(name: String)
+GET     /categories/delete/:id                             controllers.CategoryController.delete(id: Int)
+GET     /categories/put/:id/:name                          controllers.CategoryController.update(id: Int, name: String)
+
+GET     /baskets                                           controllers.BasketController.showAll()
+GET     /baskets/get/:id                                   controllers.BasketController.showById(id: Int)
+GET     /baskets/post/:userID/:productID/:number           controllers.BasketController.add(userID: Int, productID: Int, number: Int)
+GET     /baskets/delete/:id                                controllers.BasketController.delete(id: Int)
+GET     /baskets/put/:id/:userID/:productID/:number       controllers.BasketController.update(id: Int, userID: Int, productID: Int, number: Int)
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+GET     /assets/*file                                      controllers.Assets.versioned(path="/public", file: Asset)
