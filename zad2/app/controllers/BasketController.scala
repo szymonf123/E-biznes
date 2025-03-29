@@ -1,11 +1,14 @@
 package controllers
+
 import javax.inject._
 import play.api.mvc._
 import models.Basket
+import scala.collection.mutable.ListBuffer
 
 @Singleton
 class BasketController @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
-  private var baskets = List(
+
+  private val baskets = ListBuffer(
     Basket(0, 0, 3),
     Basket(1, 1, 1),
     Basket(1, 0, 2),
@@ -13,7 +16,7 @@ class BasketController @Inject()(val controllerComponents: ControllerComponents)
   )
 
   def showAll: Action[AnyContent] = Action {
-    Ok(views.html.baskets("Lista wszystkich koszyków", baskets))
+    Ok(views.html.baskets("Lista wszystkich koszyków", baskets.toList))
   }
 
   def showById(id: Int): Action[AnyContent] = Action {
@@ -26,17 +29,17 @@ class BasketController @Inject()(val controllerComponents: ControllerComponents)
   }
 
   def add(userID: Int, productID: Int, number: Int): Action[AnyContent] = Action {
-    baskets = baskets :+ Basket(userID, productID, number)
-    Ok(views.html.baskets("Dodano nowy koszyk", baskets))
+    baskets += Basket(userID, productID, number)
+    Ok(views.html.baskets("Dodano nowy koszyk", baskets.toList))
   }
 
   def delete(id: Int): Action[AnyContent] = Action {
     baskets.lift(id) match {
       case None =>
         NotFound(s"Koszyk o ID $id nie istnieje.")
-      case Some(basket) =>
-        baskets = baskets.patch(id, Nil, 1)
-        Ok(views.html.baskets(s"Usunięto koszyk o ID = $id", baskets))
+      case Some(_) =>
+        baskets.remove(id)
+        Ok(views.html.baskets(s"Usunięto koszyk o ID = $id", baskets.toList))
     }
   }
 
@@ -44,10 +47,9 @@ class BasketController @Inject()(val controllerComponents: ControllerComponents)
     baskets.lift(id) match {
       case None =>
         NotFound(s"Koszyk o ID $id nie istnieje.")
-      case Some(basket) =>
-        val updatedBasket= basket.copy(userID = userID, productID = productID, number = number)
-        baskets = baskets.updated(id, updatedBasket)
-        Ok(views.html.baskets(s"Zmodyfikowano koszyk o ID $id", baskets))
+      case Some(_) =>
+        baskets(id) = Basket(userID, productID, number)
+        Ok(views.html.baskets(s"Zmodyfikowano koszyk o ID $id", baskets.toList))
     }
   }
 }

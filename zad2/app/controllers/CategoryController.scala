@@ -1,18 +1,21 @@
 package controllers
+
 import javax.inject._
 import play.api.mvc._
 import models.Category
+import scala.collection.mutable.ListBuffer
 
 @Singleton
 class CategoryController @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
-  private var categories = List(
+
+  private val categories = ListBuffer(
     Category("Elektronika"),
     Category("Akcesoria"),
     Category("Rekreacja")
   )
 
   def showAll: Action[AnyContent] = Action {
-    Ok(views.html.categories("Lista kategorii", categories))
+    Ok(views.html.categories("Lista kategorii", categories.toList))
   }
 
   def showById(id: Int): Action[AnyContent] = Action {
@@ -25,18 +28,17 @@ class CategoryController @Inject()(val controllerComponents: ControllerComponent
   }
 
   def add(name: String): Action[AnyContent] = Action {
-    categories = categories :+ Category(name)
-    Ok(views.html.categories(s"Dodano nową kategorię - $name", categories))
+    categories += Category(name)
+    Ok(views.html.categories(s"Dodano nową kategorię - $name", categories.toList))
   }
 
   def delete(id: Int): Action[AnyContent] = Action {
     categories.lift(id) match {
       case None =>
         NotFound(s"Kategoria o ID $id nie istnieje.")
-      case Some(category) =>
-        val droppedCategoryName = category.name
-        categories = categories.patch(id, Nil, 1)
-        Ok(views.html.categories(s"Usunięto kategorię - $droppedCategoryName", categories))
+      case Some(_) =>
+        categories.remove(id)
+        Ok(views.html.categories(s"Usunięto kategorię o ID $id", categories.toList))
     }
   }
 
@@ -44,10 +46,9 @@ class CategoryController @Inject()(val controllerComponents: ControllerComponent
     categories.lift(id) match {
       case None =>
         NotFound(s"Kategoria o ID $id nie istnieje.")
-      case Some(category) =>
-        val updatedCategory = category.copy(name = name)
-        categories = categories.updated(id, updatedCategory)
-        Ok(views.html.categories(s"Zmodyfikowano kategorię o ID $id", categories))
+      case Some(_) =>
+        categories(id) = Category(name)
+        Ok(views.html.categories(s"Zmodyfikowano kategorię o ID $id", categories.toList))
     }
   }
 }
