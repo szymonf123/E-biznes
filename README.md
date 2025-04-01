@@ -26,3 +26,9 @@ Kod: zad1
 :white_check_mark: 5.0 Należy dodać konfigurację CORS dla dwóch hostów dla metod CRUD
 
 Kod: zad2
+
+**Zadanie 3** Kotlin
+
+:white_check_mark: 3.0 Należy stworzyć aplikację kliencką w Kotlinie we frameworku Ktor, która pozwala na przesyłanie wiadomości na platformę Discord
+
+Kod: zad3
