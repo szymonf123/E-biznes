@@ -16,32 +16,30 @@ fun main() {
 }
 
 fun Application.module() {
-    sendDiscordMessage()
+    configureRouting()
 }
 
-fun Application.sendDiscordMessage() {
+suspend fun Application.sendDiscordMessage() : String {
     val client = HttpClient(CIO)
     val webhookUrl = readFromFile("webhook.txt")
     val message = readFromFile("message.txt")
 
     if (webhookUrl.isNullOrEmpty()) {
-        println("Webhook URL nie został znaleziony w pliku.")
-        return
+        return "Webhook URL nie został znaleziony w pliku"
     }
 
-    launch {
-        try {
-            val response: HttpResponse = client.post(webhookUrl) {
-                contentType(ContentType.Application.Json)
-                setBody("{\"content\":\"$message\"}")
-            }
-            println("Wiadomość wysłana, status: ${response.status}")
-            println("Odpowiedź Discorda: ${response.bodyAsText()}")
-        } catch (e: Exception) {
-            println("Błąd przy wysyłaniu wiadomości: $e")
-        } finally {
-            client.close()
+    try {
+        val response: HttpResponse = client.post(webhookUrl) {
+            contentType(ContentType.Application.Json)
+            setBody("{\"content\":\"$message\"}")
         }
+        val status = response.status
+        val body = response.bodyAsText()
+        return "Wiadomość wysłana, status: $status\nOdpowiedź Discorda: $body"
+    } catch (e: Exception) {
+        return "Błąd przy wysyłaniu wiadomości: $e"
+    } finally {
+        client.close()
     }
 }
 
