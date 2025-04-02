@@ -49,7 +49,21 @@ suspend fun Application.sendDiscordMessage() : String {
     }
 }
 
+val categoriesAndItems = mapOf(
+    "Sport" to listOf("Football", "Basketball", "Volleyball"),
+    "Electronics" to listOf("TV", "Smartphone", "Smartwatch", "Tablet"),
+    "Clothes" to listOf("T-shirt", "Jeans", "Cap", "Socks")
+)
+
 class MessageListener : ListenerAdapter() {
+    fun responseByItems(items : Collection<String>) : String {
+        var response: String = ""
+        for (item in items) {
+            response += item
+            response += "\n"
+        }
+        return response
+    }
     override fun onMessageReceived(event: MessageReceivedEvent) {
         val message: Message = event.message
         val channel: TextChannel = event.textChannel
@@ -57,8 +71,12 @@ class MessageListener : ListenerAdapter() {
         if (event.author.isBot) return
         if (message.contentRaw.equals("hello", true)) {
             channel.sendMessage("Hello, user!").queue()
-        } else if (message.contentRaw.equals("how are you", true)) {
+        }
+        else if (message.contentRaw.equals("how are you", true)) {
             channel.sendMessage("I'm fine. Thanks!").queue()
+        }
+        else if (message.contentRaw.equals("categories", true)) {
+            channel.sendMessage(responseByItems(categoriesAndItems.keys)).queue()
         }
     }
 }

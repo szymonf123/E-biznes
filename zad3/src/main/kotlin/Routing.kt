@@ -16,7 +16,7 @@ fun Application.configureRouting() {
             JDABuilder.createDefault(botToken)
                 .addEventListeners(MessageListener())
                 .build()
-            call.respondText("Wpisz: [hello | how are you]")
+            call.respondText("Wpisz: [hello | how are you | categories]")
         }
     }
 }
