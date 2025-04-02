@@ -30,4 +30,5 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
     implementation("io.ktor:ktor-client-core:2.3.6")
     implementation("io.ktor:ktor-client-cio:2.3.6")
+    implementation("net.dv8tion:JDA:5.0.0-alpha.6")
 }

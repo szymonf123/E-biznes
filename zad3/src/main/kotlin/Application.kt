@@ -11,6 +11,12 @@ import io.ktor.server.netty.*
 import kotlinx.coroutines.launch
 import java.io.File
 
+import net.dv8tion.jda.api.JDABuilder
+import net.dv8tion.jda.api.entities.Message
+import net.dv8tion.jda.api.entities.TextChannel
+import net.dv8tion.jda.api.hooks.ListenerAdapter
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent
+
 fun main() {
     embeddedServer(Netty, port = 8080, module = Application::module).start(wait = true)
 }
@@ -40,6 +46,20 @@ suspend fun Application.sendDiscordMessage() : String {
         return "Błąd przy wysyłaniu wiadomości: $e"
     } finally {
         client.close()
+    }
+}
+
+class MessageListener : ListenerAdapter() {
+    override fun onMessageReceived(event: MessageReceivedEvent) {
+        val message: Message = event.message
+        val channel: TextChannel = event.textChannel
+
+        if (event.author.isBot) return
+        if (message.contentRaw.equals("hello", true)) {
+            channel.sendMessage("Hello, user!").queue()
+        } else if (message.contentRaw.equals("how are you", true)) {
+            channel.sendMessage("I'm fine. Thanks!").queue()
+        }
     }
 }
 
