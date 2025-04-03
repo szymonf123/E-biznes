@@ -78,6 +78,14 @@ class MessageListener : ListenerAdapter() {
         else if (message.contentRaw.equals("categories", true)) {
             channel.sendMessage(responseByItems(categoriesAndItems.keys)).queue()
         }
+        else {
+            for (category in categoriesAndItems.keys) {
+                if (message.contentRaw.equals("items $category", true)) {
+                    channel.sendMessage(responseByItems(categoriesAndItems[category]!!)).queue()
+                    break
+                }
+            }
+        }
     }
 }
 
