@@ -1,4 +1,4 @@
-W folderze należy umieścić 2 pliki:
+W folderze należy umieścić 3 pliki:
 
 *message.txt* - zawierający wiadomość do wysłania
 
