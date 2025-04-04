@@ -38,3 +38,4 @@ out/
 ### Files with input data ###
 webhook.txt
 message.txt
+botToken.txt
