@@ -42,3 +42,6 @@ Kod: zad3
 
 Demo: [Link do demo](https://ujchmura-my.sharepoint.com/:v:/g/personal/s_fortuna_student_uj_edu_pl/EUQRVIBLwcNLjZ4daRnB65MB2fEUOFvOPvtuzgWfEbZ2aw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=h8r3ZI)
 
+**Zadanie 4** Go
+
+:white_check_mark: 3.0 Należy stworzyć aplikację we frameworki echo w j. Go, która będzie miała kontroler Produktów zgodny z CRUD
