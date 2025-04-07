@@ -48,3 +48,4 @@ Demo: [Link do demo](https://ujchmura-my.sharepoint.com/:v:/g/personal/s_fortuna
 
 :white_check_mark: 3.5 Należy stworzyć model Produktów wykorzystując gorm oraz wykorzystać model do obsługi produktów (CRUD) w kontrolerze (zamiast listy)
 
+:white_check_mark: 4.0 Należy dodać model Koszyka oraz dodać odpowiedni endpoint
