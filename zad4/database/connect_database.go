@@ -16,6 +16,6 @@ func ConnectDatabase() *gorm.DB {
 	if err != nil {
 		return nil
 	}
-
+	err = db.AutoMigrate(&models.Basket{})
 	return db
 }
