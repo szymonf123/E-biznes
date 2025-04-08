@@ -44,8 +44,12 @@ Demo: [Link do demo](https://ujchmura-my.sharepoint.com/:v:/g/personal/s_fortuna
 
 **Zadanie 4** Go
 
+Należy stworzyć projekt w echo w Go. Należy wykorzystać gorm do stworzenia 5 modeli, gdzie pomiędzy dwoma musi być relacja. Należy zaimplementować proste endpointy do dodawania oraz wyświetlania danych za pomocą modeli. Jako bazę danych można wybrać dowolną, sugerowałbym jednak pozostać przy sqlite.
+
 :white_check_mark: 3.0 Należy stworzyć aplikację we frameworki echo w j. Go, która będzie miała kontroler Produktów zgodny z CRUD
 
 :white_check_mark: 3.5 Należy stworzyć model Produktów wykorzystując gorm oraz wykorzystać model do obsługi produktów (CRUD) w kontrolerze (zamiast listy)
 
 :white_check_mark: 4.0 Należy dodać model Koszyka oraz dodać odpowiedni endpoint
+
+:white_check_mark: 4.5 Należy stworzyć model kategorii i dodać relację między kategorią, a produktem
