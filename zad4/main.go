@@ -19,5 +19,6 @@ func main() {
 
 	routes.ProductRoutes(e)
 	routes.BasketRoutes(e)
+	routes.CategoryRoutes(e)
 	e.Logger.Fatal(e.Start(":8080"))
 }

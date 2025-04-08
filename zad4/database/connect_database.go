@@ -12,10 +12,14 @@ func ConnectDatabase() *gorm.DB {
 		panic("failed to connect database")
 	}
 
-	err = db.AutoMigrate(&models.Product{})
+	err = db.AutoMigrate(&models.Category{}, &models.Product{})
 	if err != nil {
 		return nil
 	}
 	err = db.AutoMigrate(&models.Basket{})
+	if err != nil {
+		return nil
+	}
+
 	return db
 }

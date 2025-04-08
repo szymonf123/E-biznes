@@ -14,7 +14,7 @@ func (pc *ProductController) GetProducts(c echo.Context) error {
 	db := c.Get("db").(*gorm.DB)
 
 	var products []models.Product
-	db.Find(&products)
+	db.Preload("Category").Find(&products)
 	return c.JSON(http.StatusOK, &products)
 }
 
@@ -72,6 +72,7 @@ func (pc *ProductController) UpdateProduct(c echo.Context) error {
 
 	product.Name = updatedData.Name
 	product.Price = updatedData.Price
+	product.CategoryID = updatedData.CategoryID
 
 	if err := db.Save(&product).Error; err != nil {
 		return c.JSON(http.StatusInternalServerError, map[string]string{"error": "Failed to update product"})
