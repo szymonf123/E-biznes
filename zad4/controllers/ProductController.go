@@ -102,3 +102,43 @@ func (pc *ProductController) DeleteProduct(c echo.Context) error {
 
 	return c.JSON(http.StatusOK, product)
 }
+
+//Scope
+
+func PriceAbove(min float64) func(*gorm.DB) *gorm.DB {
+	return func(db *gorm.DB) *gorm.DB {
+		return db.Where("price > ?", min)
+	}
+}
+
+func InCategory(categoryID uint) func(*gorm.DB) *gorm.DB {
+	return func(db *gorm.DB) *gorm.DB {
+		return db.Where("category_id = ?", categoryID)
+	}
+}
+
+func Latest() func(*gorm.DB) *gorm.DB {
+	return func(db *gorm.DB) *gorm.DB {
+		return db.Order("created_at desc")
+	}
+}
+
+func (pc *ProductController) GetProductsFromScopes(c echo.Context) error {
+	db := c.Get("db").(*gorm.DB)
+
+	minPriceParam := c.QueryParam("min_price")
+	minPrice, err := strconv.ParseFloat(minPriceParam, 64)
+	if err != nil {
+		return c.JSON(http.StatusBadRequest, map[string]string{"error": "min_price must be float"})
+	}
+
+	categoryParam := c.QueryParam("category")
+	category, err := strconv.ParseUint(categoryParam, 10, 64)
+	if err != nil {
+		return c.JSON(http.StatusBadRequest, map[string]string{"error": "categoryID must be integer"})
+	}
+
+	var products []models.Product
+	db.Preload("Category").Scopes(PriceAbove(minPrice), InCategory(uint(category)), Latest()).Find(&products)
+	return c.JSON(http.StatusOK, &products)
+}

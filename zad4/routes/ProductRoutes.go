@@ -13,4 +13,6 @@ func ProductRoutes(e *echo.Echo) {
 	e.POST("/products", productController.AddProduct)
 	e.PUT("/products/:id", productController.UpdateProduct)
 	e.DELETE("/products/:id", productController.DeleteProduct)
+
+	e.GET("/products-from-scope", productController.GetProductsFromScopes)
 }
