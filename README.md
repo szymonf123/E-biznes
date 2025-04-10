@@ -53,3 +53,5 @@ Należy stworzyć projekt w echo w Go. Należy wykorzystać gorm do stworzenia 5
 :white_check_mark: 4.0 Należy dodać model Koszyka oraz dodać odpowiedni endpoint
 
 :white_check_mark: 4.5 Należy stworzyć model kategorii i dodać relację między kategorią, a produktem
+
+:white_check_mark: 5.0 pogrupować zapytania w gorm’owe scope'y
