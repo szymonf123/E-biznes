@@ -55,3 +55,7 @@ Należy stworzyć projekt w echo w Go. Należy wykorzystać gorm do stworzenia 5
 :white_check_mark: 4.5 Należy stworzyć model kategorii i dodać relację między kategorią, a produktem
 
 :white_check_mark: 5.0 pogrupować zapytania w gorm’owe scope'y
+
+[Demo](https://ujchmura-my.sharepoint.com/:v:/g/personal/s_fortuna_student_uj_edu_pl/EbjXWq7gxX9KpdlwSgexzooBi22SEzrOUdm0y2m8J1Wwvw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=wYsLtC)
+
+Kod: zad4
