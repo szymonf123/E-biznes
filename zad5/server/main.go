@@ -17,5 +17,6 @@ func main() {
 		AllowMethods: []string{http.MethodGet, http.MethodPost},
 	}))
 	routes.PaymentRoutes(e)
+	routes.ProductRoutes(e)
 	e.Logger.Fatal(e.Start(":8080"))
 }
