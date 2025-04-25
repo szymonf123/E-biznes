@@ -18,5 +18,6 @@ func main() {
 	}))
 	routes.PaymentRoutes(e)
 	routes.ProductRoutes(e)
+	routes.CartRoutes(e)
 	e.Logger.Fatal(e.Start(":8080"))
 }

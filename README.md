@@ -68,7 +68,7 @@ Kotlin, Scala, Go. Dane pomiędzy wszystkimi komponentami powinny być przesyła
 
 :white_check_mark: 3.0 W ramach projektu należy stworzyć dwa komponenty: Produkty oraz Płatności; Płatności powinny wysyłać do aplikacji serwerowej dane, a w Produktach powinniśmy pobierać dane o produktach z aplikacji serwerowej;
 
-3.5 Należy dodać Koszyk wraz z widokiem; należy wykorzystać routing
+:white_check_mark: 3.5 Należy dodać Koszyk wraz z widokiem; należy wykorzystać routing
 
 4.0 Dane pomiędzy wszystkimi komponentami powinny być przesyłane za pomocą React hooks
 

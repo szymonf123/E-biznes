@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-type Product = {
+export type Product = {
+    id: number
     name: string;
     price: number;
 };
@@ -18,13 +19,13 @@ const ProductList: React.FC = () => {
     return (
         <div>
             <h2 className="text-xl font-semibold mb-4">Produkty</h2>
-            <ul className="space-y-2">
+            <ol className="space-y-2">
                 {products.map((product) => (
-                    <li className="border p-2 rounded">
+                    <li key={product.id} className="border p-2 rounded">
                         <strong>{product.name}</strong> – {product.price.toFixed(2)} zł
                     </li>
                 ))}
-            </ul>
+            </ol>
         </div>
     );
 };

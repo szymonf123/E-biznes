@@ -7,11 +7,11 @@ import (
 )
 
 var products = []models.Product{
-	{Name: "Laptop", Price: 3999.99},
-	{Name: "Smartfon", Price: 2499.00},
-	{Name: "Słuchawki", Price: 299.99},
-	{Name: "Monitor", Price: 899.50},
-	{Name: "Klawiatura mechaniczna", Price: 399.90},
+	{Id: 1, Name: "Laptop", Price: 3999.99},
+	{Id: 2, Name: "Smartfon", Price: 2499.00},
+	{Id: 3, Name: "Słuchawki", Price: 299.99},
+	{Id: 4, Name: "Monitor", Price: 899.50},
+	{Id: 5, Name: "Klawiatura mechaniczna", Price: 399.90},
 }
 
 type ProductController struct{}
