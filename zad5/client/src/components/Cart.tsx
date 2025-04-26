@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import product, {Product} from "./Product";
+import {Product} from "./Product";
 
 type ProductData = {
     id: number

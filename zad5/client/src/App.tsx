@@ -1,5 +1,4 @@
 import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
-import ProductList from "./components/Product";
 import Cart from "./components/Cart";
 import ClientView from "./views/ClientView";
 import Payment from "./components/Payment";
