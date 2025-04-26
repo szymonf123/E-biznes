@@ -1,20 +1,16 @@
-import React, { useEffect, useState } from "react";
-
-export type Product = {
-    id: number
-    name: string;
-    price: number;
-};
+import React from "react";
+import { useProducts, Product } from "../contexts/ProductContext";
 
 const ProductList: React.FC = () => {
-    const [products, setProducts] = useState<Product[]>([]);
+    const { products, loading, error } = useProducts();
 
-    useEffect(() => {
-        fetch("http://localhost:8080/products")
-            .then((res) => res.json())
-            .then((data) => setProducts(data))
-            .catch((error) => console.error("Błąd ładowania produktów:", error));
-    }, []);
+    if (loading) {
+        return <p>Ładowanie produktów...</p>;
+    }
+
+    if (error) {
+        return <p>Wystąpił błąd podczas ładowania produktów: {error}</p>;
+    }
 
     return (
         <div>
@@ -30,4 +26,4 @@ const ProductList: React.FC = () => {
     );
 };
 
-export default ProductList;
+export default Product;

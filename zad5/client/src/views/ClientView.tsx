@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Product } from "../components/Product";
+import Product from "../components/Product";
 
 type CartResponse = {
     products: number[];

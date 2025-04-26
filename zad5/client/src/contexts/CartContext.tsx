@@ -1,5 +1,5 @@
 import React, {useEffect, useState, createContext, useContext} from "react";
-import { Product } from "../components/Product"
+import Product from "../components/Product"
 
 type ProductData = {
     id: number;
