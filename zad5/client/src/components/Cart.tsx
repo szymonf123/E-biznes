@@ -1,46 +1,18 @@
-import React, {useEffect, useState} from "react";
-import {Product} from "./Product";
+import React, { useState } from "react";
+import { useCart } from "../contexts/CartContext"; // Upewnij się, że ścieżka jest poprawna
 
 type ProductData = {
     id: number
 };
 
 const Cart: React.FC = () => {
-    const [id, setId] = useState(0);
-    const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-    const [products, setProducts] = useState<Product[]>([]);
+    const { products, addToCart, status } = useCart();
+    const [productIdToAdd, setProductIdToAdd] = useState(0);
 
-    useEffect(() => {
-        fetch("http://localhost:8080/products")
-            .then((res) => res.json())
-            .then((data) => setProducts(data))
-            .catch((error) => console.error("Błąd ładowania produktów:", error));
-    }, []);
-
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        setStatus("loading");
-
-        const productData: ProductData = {
-            id
-        };
-
-        try {
-            const res = await fetch("http://localhost:8080/cart", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(productData),
-            });
-
-            if (!res.ok) throw new Error("Błąd serwera");
-
-            setStatus("success");
-        } catch (err) {
-            console.error(err);
-            setStatus("error");
-        }
+        addToCart(productIdToAdd);
+        setProductIdToAdd(0); // Reset input po dodaniu
     };
 
     return (
@@ -60,14 +32,14 @@ const Cart: React.FC = () => {
                     Podaj ID produktu do dodania:
                     <input
                         type="number"
-                        value={id}
-                        onChange={(e) => setId(Number(e.target.value))}
+                        value={productIdToAdd}
+                        onChange={(e) => setProductIdToAdd(Number(e.target.value))}
                         className="border p-1 ml-2"
                         required
                     />
                 </label>
-                <button type="submit" className="bg-blue-500 text-white px-4 py-1 rounded">
-                    Dodaj do koszyka
+                <button type="submit" className="bg-blue-500 text-white px-4 py-1 rounded" disabled={status === "loading"}>
+                    {status === "loading" ? "Dodawanie..." : "Dodaj do koszyka"}
                 </button>
                 {status === "success" && <p className="text-green-600">Dodano do koszyka!</p>}
                 {status === "error" && <p className="text-red-600">Wystąpił błąd.</p>}
