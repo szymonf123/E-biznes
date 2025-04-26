@@ -70,7 +70,7 @@ Kotlin, Scala, Go. Dane pomiędzy wszystkimi komponentami powinny być przesyła
 
 :white_check_mark: 3.5 Należy dodać Koszyk wraz z widokiem; należy wykorzystać routing
 
-4.0 Dane pomiędzy wszystkimi komponentami powinny być przesyłane za pomocą React hooks
+:white_check_mark: 4.0 Dane pomiędzy wszystkimi komponentami powinny być przesyłane za pomocą React hooks
 
 4.5 Należy dodać skrypt uruchamiający aplikację serwerową oraz kliencką na dockerze via docker-compose
 
