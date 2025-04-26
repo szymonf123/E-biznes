@@ -40,7 +40,6 @@ const ClientView: React.FC = () => {
                     ))}
                 </ul>
             )}
-            <Link to="/" className="text-blue-500 mt-4 inline-block">← Powrót do sklepu</Link>
         </div>
     );
 };

@@ -7,7 +7,6 @@ import (
 )
 
 var cart = models.Cart{
-	Id:       1,
 	Products: []int{},
 }
 
