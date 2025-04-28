@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect, useContext } from "react";
+import axios from "axios";
 
 export type Product = {
     id: number;
@@ -24,15 +25,11 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
             setLoading(true);
             setError(null);
             try {
-                const res = await fetch("http://localhost:8080/products");
-                if (!res.ok) {
-                    throw new Error(`Błąd HTTP: ${res.status}`);
-                }
-                const data: Product[] = await res.json();
-                setProducts(data);
-                setLoading(false);
+                const res = await axios.get<Product[]>("http://localhost:8080/products");
+                setProducts(res.data);
             } catch (err: any) {
-                setError(err.message);
+                setError(err.response?.data?.message || err.message || "Wystąpił błąd");
+            } finally {
                 setLoading(false);
             }
         };

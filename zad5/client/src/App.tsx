@@ -4,6 +4,7 @@ import ClientView from "./views/ClientView";
 import Payment from "./components/Payment";
 import './App.css';
 import {CartProvider} from "./contexts/CartContext";
+import React from "react";
 
 const App: React.FC = () => {
     return (

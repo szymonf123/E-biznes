@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Product from "../components/Product";
+import axios from "axios";
 
 type CartResponse = {
     products: number[];
@@ -16,22 +17,14 @@ const ClientView: React.FC = () => {
             setError(null);
 
             try {
-                const [cartRes, productsRes] = await Promise.all([
-                    fetch("http://localhost:8080/cart"),
-                    fetch("http://localhost:8080/products")
+                const [cartResponse, productsResponse] = await Promise.all([
+                    axios.get<CartResponse>("http://localhost:8080/cart"),
+                    axios.get<Product[]>("http://localhost:8080/products")
                 ]);
 
-                if (!cartRes.ok) {
-                    throw new Error(`Błąd HTTP podczas pobierania koszyka: ${cartRes.status}`);
-                }
-                if (!productsRes.ok) {
-                    throw new Error(`Błąd HTTP podczas pobierania produktów: ${productsRes.status}`);
-                }
+                const cartData = cartResponse.data;
+                const allProducts = productsResponse.data;
 
-                const cartData: CartResponse = await cartRes.json();
-                const allProducts: Product[] = await productsRes.json();
-
-                // Stwórz listę produktów w koszyku na podstawie ID
                 const detailedCartProducts: Product[] = cartData.products.map(productId => {
                     return allProducts.find(product => product.id === productId);
                 }).filter(product => product !== undefined) as Product[];
@@ -39,13 +32,15 @@ const ClientView: React.FC = () => {
                 setCartProducts(detailedCartProducts);
                 setLoading(false);
 
-            } catch (err: any) {
-                setError(err.message);
+            } catch (error: any) {
+                setError(error.message);
                 setLoading(false);
             }
         };
 
-        fetchCartDataFromServer();
+        fetchCartDataFromServer().catch((err) => {
+            console.error("Błąd w fetchCartDataFromServer:", err);
+        });
     }, []);
 
     if (loading) {

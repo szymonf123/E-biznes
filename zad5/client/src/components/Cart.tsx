@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import { useCart } from "../contexts/CartContext"; // Upewnij się, że ścieżka jest poprawna
-
-type ProductData = {
-    id: number
-};
+import { useCart } from "../contexts/CartContext";
 
 const Cart: React.FC = () => {
     const { products, addToCart, status } = useCart();
@@ -12,7 +8,7 @@ const Cart: React.FC = () => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         addToCart(productIdToAdd);
-        setProductIdToAdd(0); // Reset input po dodaniu
+        setProductIdToAdd(0);
     };
 
     return (
