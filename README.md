@@ -74,4 +74,8 @@ Kotlin, Scala, Go. Dane pomiędzy wszystkimi komponentami powinny być przesyła
 
 :white_check_mark: 4.5 Należy dodać skrypt uruchamiający aplikację serwerową oraz kliencką na dockerze via docker-compose
 
-5.0 Należy wykorzystać axios’a oraz dodać nagłówki pod CORS
+:white_check_mark: 5.0 Należy wykorzystać axios’a oraz dodać nagłówki pod CORS
+
+Kod: zad5
+
+[Demo](https://ujchmura-my.sharepoint.com/personal/s_fortuna_student_uj_edu_pl/_layouts/15/stream.aspx?id=%2Fpersonal%2Fs%5Ffortuna%5Fstudent%5Fuj%5Fedu%5Fpl%2FDocuments%2FE%2Dbiznes%20Demos%2FSzymon%20Fortuna%20zad5%20demo%2Emkv&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E62b222f0%2D64ef%2D4488%2D8774%2D3365156c5543)
