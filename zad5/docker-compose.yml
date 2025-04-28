@@ -1,0 +1,20 @@
+services:
+  server_app:
+    build:
+      context: ./server
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+
+  client_app:
+    build:
+      context: ./client
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
