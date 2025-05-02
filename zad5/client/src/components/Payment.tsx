@@ -7,16 +7,22 @@ type PaymentData = {
 
 const Payment: React.FC = () => {
     const [cardNumber, setCardNumber] = useState("");
-    const [amount, setAmount] = useState(0);
+    const [amount, setAmount] = useState("");
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setStatus("loading");
 
+        const parsedAmount = parseFloat(amount);
+        if (isNaN(parsedAmount)) {
+            setStatus("error");
+            return;
+        }
+
         const paymentData: PaymentData = {
             cardNumber,
-            amount,
+            amount: parsedAmount,
         };
 
         try {
@@ -48,6 +54,7 @@ const Payment: React.FC = () => {
                         value={cardNumber}
                         onChange={(e) => setCardNumber(e.target.value)}
                         className="w-full border px-3 py-2 rounded-md"
+                        id="card-number"
                         placeholder="1234 5678 9012 3456"
                         required
                     />
@@ -57,8 +64,10 @@ const Payment: React.FC = () => {
                     <input
                         type="number"
                         value={amount}
-                        onChange={(e) => setAmount(Number(e.target.value))}
+                        defaultValue={0}
+                        onChange={(e) => setAmount(e.target.value)}
                         className="w-full border px-3 py-2 rounded-md"
+                        id="amount"
                         required
                     />
                 </div>
@@ -70,8 +79,8 @@ const Payment: React.FC = () => {
                     {status === "loading" ? "Przetwarzanie..." : "Zapłać"}
                 </button>
             </form>
-            {status === "success" && <p className="text-green-600 mt-4">Płatność zakończona sukcesem!</p>}
-            {status === "error" && <p className="text-red-600 mt-4">Coś poszło nie tak. Spróbuj ponownie.</p>}
+            {status === "success" && <p className="payment-info text-green-600 mt-4">Płatność zakończona sukcesem!</p>}
+            {status === "error" && <p className="payment-info text-red-600 mt-4">Coś poszło nie tak. Spróbuj ponownie.</p>}
         </div>
     );
 };

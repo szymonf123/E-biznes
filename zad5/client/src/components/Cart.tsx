@@ -3,12 +3,16 @@ import { useCart } from "../contexts/CartContext";
 
 const Cart: React.FC = () => {
     const { products, addToCart, status } = useCart();
-    const [productIdToAdd, setProductIdToAdd] = useState(0);
+    const [productIdToAdd, setProductIdToAdd] = useState("");
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        addToCart(productIdToAdd);
-        setProductIdToAdd(0);
+
+        const parsedId = Number(productIdToAdd);
+        if (!Number.isInteger(parsedId) || parsedId <= 0) return;
+
+        addToCart(parsedId);
+        setProductIdToAdd("");
     };
 
     return (
@@ -29,8 +33,9 @@ const Cart: React.FC = () => {
                     <input
                         type="number"
                         value={productIdToAdd}
-                        onChange={(e) => setProductIdToAdd(Number(e.target.value))}
+                        onChange={(e) => setProductIdToAdd(e.target.value)}
                         className="border p-1 ml-2"
+                        id="product-id"
                         required
                     />
                 </label>

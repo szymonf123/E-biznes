@@ -79,3 +79,23 @@ Kotlin, Scala, Go. Dane pomiędzy wszystkimi komponentami powinny być przesyła
 Kod: zad5
 
 [Demo](https://ujchmura-my.sharepoint.com/personal/s_fortuna_student_uj_edu_pl/_layouts/15/stream.aspx?id=%2Fpersonal%2Fs%5Ffortuna%5Fstudent%5Fuj%5Fedu%5Fpl%2FDocuments%2FE%2Dbiznes%20Demos%2FSzymon%20Fortuna%20zad5%20demo%2Emkv&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E62b222f0%2D64ef%2D4488%2D8774%2D3365156c5543)
+
+**Zadanie 6** Testy
+
+Należy stworzyć 20 przypadków testowych w jednym z rozwiązań:
+
+- Cypress JS (JS)
+
+- Selenium (Kotlin, Python, Java, JS, Go, Scala)
+
+Testy mają w sumie zawierać minimum 50 asercji (3.5). Mają również uruchamiać się na platformie Browserstack (5.0). Proszę pamiętać o stworzeniu darmowego konta via https://education.github.com/pack.
+
+:white_check_mark: 3.0 Należy stworzyć 20 przypadków testowych w CypressJS lub Selenium (Kotlin, Python, Java, JS, Go, Scala)
+
+:white_check_mark: 3.5 Należy rozszerzyć testy funkcjonalne, aby zawierały minimum 50 asercji
+
+:white_check_mark: 4.0 Należy stworzyć testy jednostkowe do wybranego wcześniejszego projektu z minimum 50 asercjami
+
+4.5 Należy dodać testy API, należy pokryć wszystkie endpointy z minimum jednym scenariuszem negatywnym per endpoint
+
+5.0 Należy uruchomić testy funkcjonalne na Browserstacku
