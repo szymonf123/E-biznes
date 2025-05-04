@@ -98,4 +98,8 @@ Testy mają w sumie zawierać minimum 50 asercji (3.5). Mają również uruchami
 
 :white_check_mark: 4.5 Należy dodać testy API, należy pokryć wszystkie endpointy z minimum jednym scenariuszem negatywnym per endpoint
 
-5.0 Należy uruchomić testy funkcjonalne na Browserstacku
+:white_check_mark: 5.0 Należy uruchomić testy funkcjonalne na Browserstacku
+
+Kod: zad6, zad4 (dot. części na 4.5), zad5 (dot. części na 4.0)
+
+[Demo](https://ujchmura-my.sharepoint.com/:v:/r/personal/s_fortuna_student_uj_edu_pl/Documents/E-biznes%20Demos/Szymon%20Fortuna%20zad6%20demo.mp4?csf=1&web=1&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=xjjvGC)
