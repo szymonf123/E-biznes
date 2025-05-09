@@ -103,3 +103,20 @@ Testy mają w sumie zawierać minimum 50 asercji (3.5). Mają również uruchami
 Kod: zad6, zad4 (dot. części na 4.5), zad5 (dot. części na 4.0)
 
 [Demo](https://ujchmura-my.sharepoint.com/:v:/r/personal/s_fortuna_student_uj_edu_pl/Documents/E-biznes%20Demos/Szymon%20Fortuna%20zad6%20demo.mp4?csf=1&web=1&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=xjjvGC)
+
+
+
+**Zadanie 7** Sonar
+
+Należy dodać projekt aplikacji klienckiej oraz serwerowej (jeden branch, dwa repozytoria) do Sonara w wersji chmurowej (https://sonarcloud.io/). Należy poprawić aplikacje uzyskując 0 bugów,
+0 zapaszków, 0 podatności, 0 błędów bezpieczeństwa. Dodatkowo należy dodać widżety sonarowe do README w repozytorium dane projektu z wynikami.
+
+3.0 Należy dodać litera do odpowiedniego kodu aplikacji serwerowej w hookach gita
+3.5 Należy wyeliminować wszystkie bugi w kodzie w Sonarze (kod aplikacji serwerowej)
+4.0 Należy wyeliminować wszystkie zapaszki w kodzie w Sonarze (kod aplikacji serwerowej)
+4.5 Należy wyeliminować wszystkie podatności oraz błędy bezpieczeństwa w kodzie w Sonarze (kod aplikacji serwerowej)
+5.0 Należy wyeliminować wszystkie błędy oraz zapaszki w kodzie aplikacji klienckiej
+
+https://golangci-lint.run/
+https://github.com/pinterest/ktlint
+https://scalameta.org/scalafmt/docs/installation.html
