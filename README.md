@@ -119,10 +119,8 @@ Należy dodać projekt aplikacji klienckiej oraz serwerowej (jeden branch, dwa r
 
 :white_check_mark: 4.5 Należy wyeliminować wszystkie podatności oraz błędy bezpieczeństwa w kodzie w Sonarze (kod aplikacji serwerowej)
 
-5.0 Należy wyeliminować wszystkie błędy oraz zapaszki w kodzie aplikacji klienckiej
+:white_check_mark: 5.0 Należy wyeliminować wszystkie błędy oraz zapaszki w kodzie aplikacji klienckiej
 
-https://golangci-lint.run/
+Kod: zad7
 
-https://github.com/pinterest/ktlint
-
-https://scalameta.org/scalafmt/docs/installation.html
+[Demo](https://ujchmura-my.sharepoint.com/personal/s_fortuna_student_uj_edu_pl/_layouts/15/stream.aspx?id=%2Fpersonal%2Fs%5Ffortuna%5Fstudent%5Fuj%5Fedu%5Fpl%2FDocuments%2FE%2Dbiznes%20Demos%2FSzymon%20Fortuna%20zad7%20demo%2Emkv&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E30abc15c%2D0cf0%2D4ac4%2Dafae%2D6da35b816a9b&isDarkMode=true)
