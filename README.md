@@ -124,3 +124,22 @@ Należy dodać projekt aplikacji klienckiej oraz serwerowej (jeden branch, dwa r
 Kod: zad7
 
 [Demo](https://ujchmura-my.sharepoint.com/personal/s_fortuna_student_uj_edu_pl/_layouts/15/stream.aspx?id=%2Fpersonal%2Fs%5Ffortuna%5Fstudent%5Fuj%5Fedu%5Fpl%2FDocuments%2FE%2Dbiznes%20Demos%2FSzymon%20Fortuna%20zad7%20demo%2Emkv&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E30abc15c%2D0cf0%2D4ac4%2Dafae%2D6da35b816a9b&isDarkMode=true)
+
+
+**Zadanie 8** Oauth2
+
+Należy skonfigurować klienta Oauth2 (4.0). Dane o użytkowniku wraz z tokenem powinny być przechowywane po stronie bazy serwera, a nowy token (inny niż ten od dostawcy) powinien zostać wysłany do klienta (React). Można zastosować mechanizm sesji lub inny dowolny (5.0).
+
+Zabronione jest tworzenie klientów bezpośrednio po stronie React'a wyłączając z komunikacji aplikację serwerową, np. wykorzystując auth0.
+
+Prawidłowa komunikacja: react-sewer-dostawca-serwer(via return uri)-react.
+
+3.0 logowanie przez aplikację serwerową (bez Oauth2)
+
+3.5 rejestracja przez aplikację serwerową (bez Oauth2)
+
+4.0 logowanie via Google OAuth2
+
+4.5 logowanie via Facebook lub Github OAuth2
+
+5.0 zapisywanie danych logowania OAuth2 po stronie serwera
