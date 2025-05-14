@@ -134,9 +134,9 @@ Zabronione jest tworzenie klientów bezpośrednio po stronie React'a wyłączaj�
 
 Prawidłowa komunikacja: react-sewer-dostawca-serwer(via return uri)-react.
 
-3.0 logowanie przez aplikację serwerową (bez Oauth2)
+:white_check_mark: 3.0 logowanie przez aplikację serwerową (bez Oauth2)
 
-3.5 rejestracja przez aplikację serwerową (bez Oauth2)
+:white_check_mark: 3.5 rejestracja przez aplikację serwerową (bez Oauth2)
 
 4.0 logowanie via Google OAuth2
 
