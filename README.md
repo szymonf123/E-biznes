@@ -138,7 +138,7 @@ Prawidłowa komunikacja: react-sewer-dostawca-serwer(via return uri)-react.
 
 :white_check_mark: 3.5 rejestracja przez aplikację serwerową (bez Oauth2)
 
-4.0 logowanie via Google OAuth2
+:white_check_mark: 4.0 logowanie via Google OAuth2
 
 4.5 logowanie via Facebook lub Github OAuth2
 

@@ -26,8 +26,13 @@ const LoginForm = () => {
             localStorage.setItem("authToken", data.token);
             navigate("/");
         } catch (error) {
+            console.log(error.message);
             setError(error.message);
         }
+    };
+
+    const handleGoogleLogin = () => {
+        window.location.href = "http://localhost:8000/api/auth/google";
     };
 
     return (
@@ -59,6 +64,10 @@ const LoginForm = () => {
                 {error && <div style={{ color: "red" }}>{error}</div>}
                 <button type="submit">Zaloguj się</button>
             </form>
+            <hr />
+            <button onClick={handleGoogleLogin} style={{ marginTop: "10px" }}>
+                Zaloguj się przez Google
+            </button>
         </div>
     );
 };
