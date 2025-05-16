@@ -140,6 +140,8 @@ Prawidłowa komunikacja: react-sewer-dostawca-serwer(via return uri)-react.
 
 :white_check_mark: 4.0 logowanie via Google OAuth2
 
-4.5 logowanie via Facebook lub Github OAuth2
+:white_check_mark: 4.5 logowanie via Facebook lub Github OAuth2
 
-5.0 zapisywanie danych logowania OAuth2 po stronie serwera
+:white_check_mark: 5.0 zapisywanie danych logowania OAuth2 po stronie serwera
+
+Kod: zad8
