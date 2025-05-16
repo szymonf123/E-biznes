@@ -145,3 +145,5 @@ Prawidłowa komunikacja: react-sewer-dostawca-serwer(via return uri)-react.
 :white_check_mark: 5.0 zapisywanie danych logowania OAuth2 po stronie serwera
 
 Kod: zad8
+
+[Demo](https://ujchmura-my.sharepoint.com/personal/s_fortuna_student_uj_edu_pl/_layouts/15/stream.aspx?id=%2Fpersonal%2Fs%5Ffortuna%5Fstudent%5Fuj%5Fedu%5Fpl%2FDocuments%2FE%2Dbiznes%20Demos%2FSzymon%20Fortuna%20zad8%20demo%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E4e1db2ce%2Dcb3f%2D4a07%2Da2df%2D28dcc1a626ef)
