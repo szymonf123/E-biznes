@@ -34,6 +34,9 @@ const LoginForm = () => {
     const handleGoogleLogin = () => {
         window.location.href = "http://localhost:8000/api/auth/google";
     };
+    const handleGithubLogin = () => {
+        window.location.href = "http://localhost:8000/api/auth/github";
+    };
 
     return (
         <div>
@@ -67,6 +70,12 @@ const LoginForm = () => {
             <hr />
             <button onClick={handleGoogleLogin} style={{ marginTop: "10px" }}>
                 Zaloguj się przez Google
+            </button>
+            <button
+                onClick={handleGithubLogin}
+                className="bg-gray-800 text-white p-2 rounded flex items-center space-x-2"
+            >
+                <span>Zaloguj przez GitHub</span>
             </button>
         </div>
     );

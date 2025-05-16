@@ -16,6 +16,18 @@ const googleCallback = (req, res) => {
     res.redirect(`http://localhost:3000?token=${token}`);
 };
 
+const githubLogin = passport.authenticate("github", {
+    scope: ["user:email"],
+});
+
+const githubCallback = (req, res) => {
+    const token = jwt.sign({ id: req.user.id, login: req.user.login }, process.env.JWT_SECRET, {
+        expiresIn: "1h",
+    });
+
+    res.redirect(`http://localhost:3000?token=${token}`);
+};
+
 const register = async (req, res) => {
     const { login, password } = req.body;
 
@@ -57,5 +69,7 @@ module.exports = {
     register,
     login,
     googleLogin,
-    googleCallback
+    googleCallback,
+    githubLogin,
+    githubCallback
 };
