@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const sequelize = require("./config/database");
 const authRoutes = require("./routes/authRoutes");
+const llmRoutes = require("./routes/llmRoutes");
 const bodyParser = require("body-parser");
 const app = express();
 const cors = require("cors");
@@ -30,6 +31,7 @@ app.use(session({
 app.use(express.json());
 app.use(passport.initialize());
 app.use("/api/auth", authRoutes);
+app.use("/llm", llmRoutes);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
