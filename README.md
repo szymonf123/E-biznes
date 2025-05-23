@@ -148,7 +148,7 @@ Kod: zad8
 
 [Demo](https://ujchmura-my.sharepoint.com/personal/s_fortuna_student_uj_edu_pl/_layouts/15/stream.aspx?id=%2Fpersonal%2Fs%5Ffortuna%5Fstudent%5Fuj%5Fedu%5Fpl%2FDocuments%2FE%2Dbiznes%20Demos%2FSzymon%20Fortuna%20zad8%20demo%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E4e1db2ce%2Dcb3f%2D4a07%2Da2df%2D28dcc1a626ef)
 
-Zadanie 9 ChatGPT bot
+**Zadanie 9** ChatGPT bot
 
 Należy rozszerzyć funkcjonalność wcześniej stworzonego bota. Do niego należy stworzyć aplikajcę frontendową, która połączy się z osobnym serwisem, który przeanalizuje tekst od użytkownika i prześle zapytanie do GPT, a następnie prześle odpowiedź do użytkownika. Cały projekt należy stworzyć w Pythonie.
 
@@ -156,7 +156,7 @@ Należy rozszerzyć funkcjonalność wcześniej stworzonego bota. Do niego nale�
 
 :white_check_mark: 3.5 należy stworzyć interfejs frontowy dla użytkownika, który komunikuje się z serwisem; odpowiedzi powinny być wysyałen do frontendowego interfejsu
 
-4.0 stworzyć listę 5 różnych otwarć oraz zamknięć rozmowy
+:white_check_mark: 4.0 stworzyć listę 5 różnych otwarć oraz zamknięć rozmowy
 
 4.5 filtrowanie po zagadnieniach związanych ze sklepem (np. ograniczenie się jedynie do ubrań oraz samego sklepu) do GPT
 
