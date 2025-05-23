@@ -5,8 +5,8 @@ const LLM = () => {
     const [prompt, setPrompt] = useState("");
     const [promptsNumber, setPromptsNumber] = useState(0);
 
-    const openings = ["Could you help me?", "Hello!", "May I have a question?", "I have a question for you.", "I would like to talk with you."];
-    const closings = ["Thank you very much!", "This is what I wanted to know!", "Great!", "You've really helped me!", "Goodbye!"];
+    const openings = ["Could you help me?", "Hello!", "May I have a question about clothes?", "I have a question about fashion for you.", "I would like to talk with you."];
+    const closings = ["Thank you very much!", "Thanks, this is what I wanted to know!", "Great!", "You've really helped me!", "Goodbye!"];
 
     const getResponse = async (e) => {
         e.preventDefault();

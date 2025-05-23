@@ -1,4 +1,25 @@
+async function checkPromptWithFilter(prompt){
+    try {
+        const response = await fetch('http://127.0.0.1:5000/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({prompt})
+        });
+        return await response.json();
+    }
+    catch (error){
+        console.error('Błąd połączenia z filtrem:', error.message);
+        throw new Error('Filter service unavailable.');
+    }
+}
+
 async function sendPrompt(prompt, model = "orca-mini") {
+    const filterCheck = await checkPromptWithFilter(prompt);
+    if (!filterCheck.allowed) {
+        return filterCheck.reason || "Prompt rejected by filter.";
+    }
     try {
         const response = await fetch('http://localhost:11434/api/generate', {
             method: 'POST',
