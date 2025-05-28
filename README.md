@@ -160,6 +160,8 @@ Należy rozszerzyć funkcjonalność wcześniej stworzonego bota. Do niego nale�
 
 :white_check_mark: 4.5 filtrowanie po zagadnieniach związanych ze sklepem (np. ograniczenie się jedynie do ubrań oraz samego sklepu) do GPT
 
-5.0 filtrowanie odpowiedzi po sentymencie
+:white_check_mark: 5.0 filtrowanie odpowiedzi po sentymencie
 
 Kod: zad8 - serwer i klient, zad9 - filtr
+
+[Demo](https://ujchmura-my.sharepoint.com/:v:/g/personal/s_fortuna_student_uj_edu_pl/ERheVi-ue7hJrP3CWYme5x0BJYqozbPQqsfaNv23vXphkQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=bOKh2K)
