@@ -165,3 +165,18 @@ Należy rozszerzyć funkcjonalność wcześniej stworzonego bota. Do niego nale�
 Kod: zad8 - serwer i klient, zad9 - filtr
 
 [Demo](https://ujchmura-my.sharepoint.com/:v:/g/personal/s_fortuna_student_uj_edu_pl/ERheVi-ue7hJrP3CWYme5x0BJYqozbPQqsfaNv23vXphkQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=bOKh2K)
+
+**Zadanie 10** Chmura/CI
+
+Należy wykorzystać GitHub Actions (dopuszczalne są inne rozwiązania
+CI) oraz chmurę Azure (dopuszczalne inne chmury), aby zbudować oraz zdeployować aplikację kliencką (frontend) oraz serwerową (backend) jako osobne dwie aplikacje. Należy do tego wykorzystać obrazy dockerowe, a aplikacje powinny działać na kontenerach. Dopuszczalne jest zbudowanie wcześniej aplikacji (jar package) oraz budowanie aplikacji via Github Actions. Należy zwrócić uwagę na zasoby dostępne na chmurze.
+
+3.0 Należy stworzyć odpowiednie instancje po stronie chmury na dockerze
+
+3.5 Stworzyć odpowiedni pipeline w Github Actions do budowania aplikacji (np. via fatjar)
+
+4.0 Dodać notyfikację mailową o zbudowaniu aplikacji
+
+4.5 Dodać krok z deploymentem aplikacji serwerowej oraz klienckiej na chmurę
+
+5.0 Dodać uruchomienie regresyjnych testów automatycznych (funkcjonalnych) jako krok w Actions
