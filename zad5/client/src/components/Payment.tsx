@@ -26,7 +26,7 @@ const Payment: React.FC = () => {
         };
 
         try {
-            const res = await fetch("http://localhost:8080/payments", {
+            const res = await fetch("https://zad5-backend-app.azurewebsites.net/payments", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

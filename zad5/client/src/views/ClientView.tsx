@@ -18,8 +18,8 @@ const ClientView: React.FC = () => {
 
             try {
                 const [cartResponse, productsResponse] = await Promise.all([
-                    axios.get<CartResponse>("http://localhost:8080/cart"),
-                    axios.get<Product[]>("http://localhost:8080/products")
+                    axios.get<CartResponse>("https://zad5-backend-app.azurewebsites.net/cart"),
+                    axios.get<Product[]>("https://zad5-backend-app.azurewebsites.net/products")
                 ]);
 
                 const cartData = cartResponse.data;
