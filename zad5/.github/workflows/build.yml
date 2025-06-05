@@ -1,0 +1,38 @@
+name: Build Backend and Frontend
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: 1.20
+
+    - name: Build Go Backend
+      working-directory: ./server
+      run: go build -v -o app .
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    - name: Install dependencies and build frontend
+      working-directory: ./client
+      run: |
+        npm install
+        npm run build
+
+    - name: Show folder structure
+      run: ls -R
