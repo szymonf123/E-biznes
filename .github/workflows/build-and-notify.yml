@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  pull_request:
 
 jobs:
   build:
@@ -11,25 +12,37 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Build (np. docker build)
-        run: echo "Tutaj komendy do budowania..."
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.21'
 
-      - name: Send email
+      - name: Build backend
+        run: |
+          cd zad5/server
+          go build -o app .
+
+      - name: Build frontend
+        run: |
+          cd zad5/client
+          npm install
+          npm run build
+
+      - name: Send email notification
+        if: always()
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.wp.pl
           server_port: 465
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: ✅ Aplikacja zbudowana pomyślnie!
+          subject: GitHub Actions - Build ${{ job.status }} for ${{ github.repository }}
           body: |
-            Cześć!
-
-            Twoja aplikacja została właśnie zbudowana przez GitHub Actions.
-            Sprawdź logi lub odwiedź stronę: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
-
+            The GitHub Actions build finished with status: **${{ job.status }}**
+            Repo: ${{ github.repository }}
+            Commit: ${{ github.sha }}
+            Triggered by: ${{ github.actor }}
           to: fortunaszymon@wp.pl
-          from: ${{ secrets.EMAIL_USERNAME }}
-          secure: true
+          from: GitHub Actions <${{ secrets.EMAIL_USERNAME }}>
