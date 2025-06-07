@@ -173,9 +173,9 @@ CI) oraz chmurę Azure (dopuszczalne inne chmury), aby zbudować oraz zdeployowa
 
 :white_check_mark: 3.0 Należy stworzyć odpowiednie instancje po stronie chmury na dockerze
 
-3.5 Stworzyć odpowiedni pipeline w Github Actions do budowania aplikacji (np. via fatjar)
+:white_check_mark: 3.5 Stworzyć odpowiedni pipeline w Github Actions do budowania aplikacji (np. via fatjar)
 
-4.0 Dodać notyfikację mailową o zbudowaniu aplikacji
+:white_check_mark: 4.0 Dodać notyfikację mailową o zbudowaniu aplikacji
 
 4.5 Dodać krok z deploymentem aplikacji serwerowej oraz klienckiej na chmurę
 
