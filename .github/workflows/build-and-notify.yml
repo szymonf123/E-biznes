@@ -1,0 +1,35 @@
+name: Build and Notify
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Build (np. docker build)
+        run: echo "Tutaj komendy do budowania..."
+
+      - name: Send email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.wp.pl
+          server_port: 465
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: ✅ Aplikacja zbudowana pomyślnie!
+          body: |
+            Cześć!
+
+            Twoja aplikacja została właśnie zbudowana przez GitHub Actions.
+            Sprawdź logi lub odwiedź stronę: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+          to: fortunaszymon@wp.pl
+          from: ${{ secrets.EMAIL_USERNAME }}
+          secure: true
