@@ -13,7 +13,7 @@ import (
 func main() {
 	e := echo.New()
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-		AllowOrigins: []string{"http://localhost:3000", "https://zad5-frontend-app.azurewebsites.net"},
+		AllowOrigins: []string{"http://localhost:3000", "http://zad5-frontend-app.azurewebsites.net"},
 		AllowMethods: []string{http.MethodGet, http.MethodPost},
 	}))
 	routes.PaymentRoutes(e)
