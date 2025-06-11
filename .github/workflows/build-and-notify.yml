@@ -29,8 +29,8 @@ jobs:
         run: |
           cd zad5
           docker-compose build
-          docker tag zad5-server_app szymonpawelfortuna/backend:latest
-          docker tag zad5-client_app szymonpawelfortuna/frontend:latest
+          docker tag szymonpawelfortuna/zad5-server_app:latest szymonpawelfortuna/backend:latest
+          docker tag szymonpawelfortuna/zad5-client_app:latest szymonpawelfortuna/frontend:latest
 
       - name: Push Docker images to Docker Hub
         run: |
