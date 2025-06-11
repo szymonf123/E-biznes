@@ -19,7 +19,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({children}
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const res = await axios.get<Product[]>("http://zad5-backend-app.azurewebsites.net/products");
+                const res = await axios.get<Product[]>("https://zad5-backend-app.azurewebsites.net/products");
                 setProducts(res.data);
             } catch (error) {
                 console.error("Błąd ładowania produktów:", error);
@@ -37,7 +37,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({children}
         setStatus("loading");
 
         try {
-            await axios.post("http://zad5-backend-app.azurewebsites.net/cart", { id: productId }, {
+            await axios.post("https://zad5-backend-app.azurewebsites.net/cart", { id: productId }, {
                 headers: {
                     "Content-Type": "application/json",
                 },
