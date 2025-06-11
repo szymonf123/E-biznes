@@ -25,7 +25,7 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
             setLoading(true);
             setError(null);
             try {
-                const res = await axios.get<Product[]>("https://zad5-backend-app.azurewebsites.net/products");
+                const res = await axios.get<Product[]>("http://zad5-backend-app.azurewebsites.net/products");
                 setProducts(res.data);
             } catch (err: any) {
                 setError(err.response?.data?.message || err.message || "Wystąpił błąd");
