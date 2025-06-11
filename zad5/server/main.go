@@ -14,7 +14,7 @@ func main() {
 	e := echo.New()
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
 		AllowOrigins: []string{"http://localhost:3000", "http://zad5-frontend-app.azurewebsites.net"},
-		AllowMethods: []string{http.MethodGet, http.MethodPost},
+		AllowMethods: []string{http.MethodGet, http.MethodPost, http.MethodOptions},
 	}))
 	routes.PaymentRoutes(e)
 	routes.ProductRoutes(e)
