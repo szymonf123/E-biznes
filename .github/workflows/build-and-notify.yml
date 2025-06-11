@@ -48,3 +48,20 @@ jobs:
         with:
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_FRONTEND }}
           images: 'szymonpawelfortuna/frontend:latest'
+
+       - name: Send email notification
+        if: always()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.wp.pl
+          server_port: 465
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: GitHub Actions - Build ${{ job.status }} for ${{ github.repository }}
+          body: |
+            The GitHub Actions build finished with status: **${{ job.status }}**
+            Repo: ${{ github.repository }}
+            Commit: ${{ github.sha }}
+            Triggered by: ${{ github.actor }}
+          to: fortunaszymon@wp.pl
+          from: GitHub Actions <${{ secrets.EMAIL_USERNAME }}>
