@@ -19,7 +19,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and tag Docker images via docker-compose
+      - name: Build and tag Docker images via docker compose
         run: |
           cd zad5
           docker-compose build
