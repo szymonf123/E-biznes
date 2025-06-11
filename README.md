@@ -177,6 +177,8 @@ CI) oraz chmurę Azure (dopuszczalne inne chmury), aby zbudować oraz zdeployowa
 
 :white_check_mark: 4.0 Dodać notyfikację mailową o zbudowaniu aplikacji
 
-4.5 Dodać krok z deploymentem aplikacji serwerowej oraz klienckiej na chmurę
+:white_check_mark: 4.5 Dodać krok z deploymentem aplikacji serwerowej oraz klienckiej na chmurę
 
 5.0 Dodać uruchomienie regresyjnych testów automatycznych (funkcjonalnych) jako krok w Actions
+
+Kod: zad5 - serwer i klient, .github/workflows - pipeline GitHub Actions
